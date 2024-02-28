@@ -39,7 +39,6 @@ app.post('/signup', function (req, res) {
       res.redirect('/protected_page');
    }
 });
-
 function checkSignIn(req, res, next) {
    if (req.session.user) {
       next();     //If session exists, proceed to page
@@ -49,7 +48,6 @@ function checkSignIn(req, res, next) {
       next(err);  //Error, trying to access unauthorized page!
    }
 }
-
 app.get('/protected_page', checkSignIn, function (req, res) {
    res.render('protected_page', { id: req.session.user.id })
 });
@@ -67,6 +65,7 @@ app.post('/login', function (req, res) {
       //res.render('login', {message: "Invalid credentials!"});
    }
 });
+
 
 app.use('/protected_page', function (err, req, res, next) {
    console.log(err);
