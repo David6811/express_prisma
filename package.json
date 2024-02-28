@@ -9,6 +9,7 @@
   "author": "Wei",
   "license": "ISC",
   "dependencies": {
+    "@prisma/client": "^5.10.2",
     "express": "^4.18.2"
   },
   "devDependencies": {
